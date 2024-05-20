@@ -29,9 +29,9 @@ function ConvertHandler() {
       return 'invalid unit';
     }
 
-    const validUnits = ['gal', 'L', 'mi', 'km', 'lbs', 'kg'];
+    const validUnits = ['gal', 'l', 'mi', 'km', 'lbs', 'kg'];
 
-    if (!validUnits.includes(match[2])) {
+    if (!validUnits.includes(match[2].toLowerCase())) {
       return 'invalid unit';
     }
 
