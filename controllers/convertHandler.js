@@ -35,6 +35,11 @@ function ConvertHandler() {
       return 'invalid unit';
     }
 
+    // check L
+    if (match[2].toLowerCase() === 'l') {
+      return 'L';
+    }
+
     result = match[2];
 
     return result;
