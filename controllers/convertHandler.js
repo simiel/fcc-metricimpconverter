@@ -17,7 +17,7 @@ function ConvertHandler() {
     }
 
     console.log(match);
-    result = match[1] || 1;
+    result = match[1] || '1';
 
     return result;
   };
