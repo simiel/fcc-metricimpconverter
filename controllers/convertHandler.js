@@ -20,9 +20,9 @@ function ConvertHandler() {
       return 'invalid unit';
     }
 
-    const validUnits = ['gal', 'l', 'mi', 'km', 'lbs', 'kg'];
+    const validUnits = ['gal', 'L', 'mi', 'km', 'lbs', 'kg'];
 
-    if (!validUnits.includes(match[2].toLowerCase())) {
+    if (!validUnits.includes(match[2])) {
       return 'invalid unit';
     }
 
@@ -36,7 +36,7 @@ function ConvertHandler() {
 
     switch (initUnit.toLowerCase()) {
       case 'gal':
-        result = 'l';
+        result = 'L';
         break;
       case 'l':
         result = 'gal';
