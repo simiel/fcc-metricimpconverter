@@ -1,14 +1,23 @@
 function ConvertHandler() {
-  const pattern = /^(\d+\.?\d*)([a-zA-Z]+)$/;
+  // pattern to match an optional number/float/fraction then compulsory a unit
+  const pattern = /^(\d*\.?\d*\/?\d*)?([a-zA-Z]+)$/;
+
   this.getNum = function (input) {
-    // pattern is a number/float then a unit
     const match = pattern.exec(input);
     if (!match) {
       return 'invalid number';
     }
 
-    // console.log(match);
-    result = match[1];
+    const fractionPattern = /^(\d*\.?\d*)?\/(\d*\.?\d*)$/;
+
+    if (fractionPattern.test(match[1])) {
+      const [numerator, denominator] = match[1].split('/');
+      result = parseFloat(numerator) / parseFloat(denominator);
+      return result;
+    }
+
+    console.log(match);
+    result = match[1] || 1;
 
     return result;
   };
