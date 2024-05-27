@@ -1,6 +1,7 @@
 function ConvertHandler() {
-  // pattern to match an optional number/float/fraction then compulsory a unit
-  const pattern = /^(\d*\.?\d*\/?\d*)?([a-zA-Z]+)$/;
+  // pattern to match an optional number/float/fraction then compulsory a unit and an optional space between number and unit
+  const pattern = /^(\d*\.?\d*\/?\d*)?([a-zA-Z]+)\s*$/;
+  // /^(\d*\.?\d*\/?\d*)?([a-zA-Z]+)$/;
 
   this.getNum = function (input) {
     const match = pattern.exec(input);
